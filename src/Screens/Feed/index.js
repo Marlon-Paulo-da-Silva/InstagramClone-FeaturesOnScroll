@@ -64,6 +64,7 @@ export default function Feed() {
         onRefresh={refreshList}
         refreshing={refreshing}
         onViewableItemsChanged={handleViewableChanged}
+        viewabilityConfig={{ viewAreaCoveragePercentThreshold: 30 }}
         ListFooterComponent={loading && <Loading />}
         renderItem={({ item }) => (
           <Post>
