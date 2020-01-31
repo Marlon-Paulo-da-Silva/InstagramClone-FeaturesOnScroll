@@ -5,7 +5,7 @@
       "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/1.jpeg",
       "small": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/instagram-clone/small/1.jpeg",
       "aspectRatio": 0.834,
-      "description": "Working hard at Rocketseat!",
+      "description": "Trabalhando Muito!!",
       "authorId": 1
     },
     {
@@ -164,8 +164,8 @@
   "authors": [
     {
       "id": 1,
-      "name": "dieegosf",
-      "avatar": "https://avatars0.githubusercontent.com/u/2254731?s=50&v=4"
+      "name": "marlon.psilva",
+      "avatar": "https://avatars0.githubusercontent.com/u/23368031?s=50&v=4"
     },
     {
       "id": 2,

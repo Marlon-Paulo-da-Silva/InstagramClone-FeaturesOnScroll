@@ -19,16 +19,17 @@ export default function Feed() {
   const [total, setTotal] = useState(0);
 
   async function loadPage(pageNumber = page) {
+    if (total && pageNumber > total) return;
+    console.log(pageNumber);
     try {
       const response = await api.get(
         `/feed?_expand=author&_limit=5&_page=${pageNumber}`
       );
 
       const data = await response.data;
-      const total = await response.headers["x-total-count"];
-      console.log(total);
+      const totalItems = await response.headers["x-total-count"];
 
-      setTotal();
+      setTotal(Math.floor(totalItems / 5));
 
       setFeed([...feed, ...data]);
 
