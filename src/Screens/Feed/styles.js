@@ -8,7 +8,17 @@ export const Header = styled.View`
   padding: 15px;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 `;
+export const PostHeader = styled.View``;
+
+export const UserInfo = styled.View`
+  flex-direction: row;
+`;
+
+export const Place = styled.Text``;
+
+export const OptionsIcon = styled.Image``;
 
 export const Avatar = styled.Image`
   width: 32px;

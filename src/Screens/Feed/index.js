@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 
-import { View, FlatList, TouchableOpacity } from "react-native";
+import { View, FlatList, TouchableOpacity, Image } from "react-native";
 
 import api from "../../services/api.js";
 
@@ -11,10 +11,17 @@ import {
   Name,
   Description,
   Loading,
+  PostHeader,
+  UserInfo,
+  PostOptions,
+  OptionsIcon,
+  Place,
   actions,
   LeftActions,
   RightAction
 } from "./styles.js";
+
+import options from "../../../assets/options.png";
 
 import LazyImage from "../../components/LazyImage/index.js";
 
@@ -79,8 +86,18 @@ export default function Feed() {
         renderItem={({ item }) => (
           <Post>
             <Header>
-              <Avatar source={{ uri: item.author.avatar }} />
-              <Name>{item.author.name}</Name>
+              <UserInfo>
+                <View>
+                  <Avatar source={{ uri: item.author.avatar }} />
+                </View>
+                <View>
+                  <Name>{item.author.name}</Name>
+                  <Place>{item.place}</Place>
+                </View>
+              </UserInfo>
+              <View>
+                <OptionsIcon source={options} />
+              </View>
             </Header>
 
             <LazyImage
