@@ -31,3 +31,10 @@ export const Description = styled.Text`
   padding: 15px;
   line-height: 18px;
 `;
+
+export const Loading = styled.ActivityIndicator.attrs({
+  size: "small",
+  color: "#999"
+})`
+  margin: 30px 0;
+`;

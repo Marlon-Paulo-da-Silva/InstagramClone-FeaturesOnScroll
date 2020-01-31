@@ -10,30 +10,37 @@ import {
   Avatar,
   Name,
   PostImage,
-  Description
+  Description,
+  Loading
 } from "./styles.js";
 
 export default function Feed() {
   const [feed, setFeed] = useState([]);
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
 
-  async function loadPage(pageNumber = page) {
+  async function loadPage(pageNumber = page, shouldRefresh = false) {
     if (total && pageNumber > total) return;
-    console.log(pageNumber);
+
+    setLoading(true);
+
     try {
       const response = await api.get(
         `/feed?_expand=author&_limit=5&_page=${pageNumber}`
       );
 
       const data = await response.data;
+
       const totalItems = await response.headers["x-total-count"];
 
       setTotal(Math.floor(totalItems / 5));
 
-      setFeed([...feed, ...data]);
+      setFeed(shouldRefresh ? data : [...feed, ...data]);
 
       setPage(pageNumber + 1);
+      setLoading(false);
     } catch (error) {
       console.log("Erro da busca: " + error.message);
     }
@@ -43,6 +50,12 @@ export default function Feed() {
     loadPage();
   }, []);
 
+  async function refreshList() {
+    setRefreshing(true);
+    await loadPage(1, true);
+    setRefreshing(false);
+  }
+
   return (
     <View>
       <FlatList
@@ -50,6 +63,9 @@ export default function Feed() {
         keyExtractor={post => String(post.id)}
         onEndReached={() => loadPage()}
         onEndReachedThreshold={0.1}
+        onRefresh={refreshList}
+        refreshing={refreshing}
+        ListFooterComponent={loading && <Loading />}
         renderItem={({ item }) => (
           <Post>
             <Header>
