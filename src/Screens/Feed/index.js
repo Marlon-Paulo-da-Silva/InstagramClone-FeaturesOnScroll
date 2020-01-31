@@ -1,10 +1,20 @@
 import React, { useState, useEffect, useCallback } from "react";
 
-import { View, FlatList } from "react-native";
+import { View, FlatList, TouchableOpacity } from "react-native";
 
 import api from "../../services/api.js";
 
-import { Post, Header, Avatar, Name, Description, Loading } from "./styles.js";
+import {
+  Post,
+  Header,
+  Avatar,
+  Name,
+  Description,
+  Loading,
+  actions,
+  LeftActions,
+  RightAction
+} from "./styles.js";
 
 import LazyImage from "../../components/LazyImage/index.js";
 
