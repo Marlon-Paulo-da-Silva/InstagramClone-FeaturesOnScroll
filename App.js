@@ -1,8 +1,13 @@
 import React from "react";
-import { StyleSheet, Text, SafeAreaView } from "react-native";
+import { StatusBar } from "react-native";
 
 import Routes from "./src/routes";
 
 export default function App() {
-  return <Routes />;
+  return (
+    <>
+      <StatusBar barStyle="dark-content" backgroundColor="#f5f5f5" />
+      <Routes />
+    </>
+  );
 }
