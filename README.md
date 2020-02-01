@@ -14,9 +14,7 @@ InstagramClone
   </a>
 </p>
 
-[//]: # "Add your gifs/images here:"
-
-<div>
+<div align="center">
   <img src="https://github.com/Marlon-Paulo-da-Silva/InstagramClone-FeaturesOnScroll/blob/master/instagramClone.gif" alt="demo" height="425">
 
 </div>
