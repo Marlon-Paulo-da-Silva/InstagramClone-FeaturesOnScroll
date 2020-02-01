@@ -34,21 +34,32 @@ export const Name = styled.Text`
 
 export const Actions = styled.View`
   flex-direction: row;
-  justify-content: space-between
-  padding: 15px;
+  justify-content: space-between;
+  padding: 10px 10px 0 10px;
 `;
 export const LeftActions = styled.View`
   flex-direction: row;
+`;
+export const Likes = styled.Text`
+  padding: 10px;
+  color: #333;
+  font-weight: bold;
 `;
 
 export const RightActions = styled.View``;
 
 export const Action = styled.Image`
   margin-right: 15px;
+  height: 25px;
+  width: 25px;
+`;
+export const Hashtag = styled.Text`
+  padding-left: 10px;
+  color: #002d5e;
 `;
 
 export const Description = styled.Text`
-  padding: 15px;
+  padding: 0 10px 10px 10px;
   line-height: 18px;
 `;
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 
-import { View, FlatList, TouchableOpacity, Image } from "react-native";
+import { View, FlatList, TouchableOpacity, Image, Text } from "react-native";
 
 import api from "../../services/api.js";
 
@@ -9,7 +9,6 @@ import {
   Header,
   Avatar,
   Name,
-  Description,
   Loading,
   PostHeader,
   UserInfo,
@@ -19,7 +18,10 @@ import {
   Actions,
   LeftActions,
   RightActions,
-  Action
+  Action,
+  Likes,
+  Hashtag,
+  Description
 } from "./styles.js";
 
 import like from "../../../assets/like.png";
@@ -121,6 +123,10 @@ export default function Feed() {
                 <Action source={save} />
               </RightActions>
             </Actions>
+
+            <Likes>{item.likes} Likes</Likes>
+
+            <Hashtag>{item.hashtags}</Hashtag>
 
             <Description>
               <Name>{item.author.name}</Name>
