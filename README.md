@@ -15,7 +15,7 @@ InstagramClone
 </p>
 
 <div align="center">
-  <img src="https://github.com/Marlon-Paulo-da-Silva/InstagramClone-FeaturesOnScroll/blob/master/instagramClone.gif" alt="demo" height="425">
+  <img align="center" src="https://github.com/Marlon-Paulo-da-Silva/InstagramClone-FeaturesOnScroll/blob/master/instagramClone.gif" alt="demo" height="425">
 
 </div>
 
