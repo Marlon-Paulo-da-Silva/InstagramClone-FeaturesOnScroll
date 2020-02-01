@@ -16,11 +16,16 @@ import {
   PostOptions,
   OptionsIcon,
   Place,
-  actions,
+  Actions,
   LeftActions,
-  RightAction
+  RightActions,
+  Action
 } from "./styles.js";
 
+import like from "../../../assets/like.png";
+import comment from "../../../assets/comment.png";
+import send from "../../../assets/send.png";
+import save from "../../../assets/save.png";
 import options from "../../../assets/options.png";
 
 import LazyImage from "../../components/LazyImage/index.js";
@@ -106,6 +111,16 @@ export default function Feed() {
               smallSource={{ uri: item.small }}
               source={{ uri: item.image }}
             />
+            <Actions>
+              <LeftActions>
+                <Action source={like} />
+                <Action source={comment} />
+                <Action source={send} />
+              </LeftActions>
+              <RightActions>
+                <Action source={save} />
+              </RightActions>
+            </Actions>
 
             <Description>
               <Name>{item.author.name}</Name>

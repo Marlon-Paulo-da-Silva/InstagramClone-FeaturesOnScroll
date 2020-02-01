@@ -32,6 +32,21 @@ export const Name = styled.Text`
   font-weight: bold;
 `;
 
+export const Actions = styled.View`
+  flex-direction: row;
+  justify-content: space-between
+  padding: 15px;
+`;
+export const LeftActions = styled.View`
+  flex-direction: row;
+`;
+
+export const RightActions = styled.View``;
+
+export const Action = styled.Image`
+  margin-right: 15px;
+`;
+
 export const Description = styled.Text`
   padding: 15px;
   line-height: 18px;
